@@ -3,10 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-  <script src="script.js"></script>
-  <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<form method="post" action="mailto:prof@cegep.com" name="form">
+    <h1>Formulaire d'inscription :</h1>
+    <label for="nom">Nom d'utilisateur : <input id="nom" name="nom" required pattern="[a-zA-Z0-9-]+"></label><br>
+    <label for="courriel">Adresse courriel :</label><input type="email" id="courriel" name="courriel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
+    <label for="mdp">Mot de passe : </label><input type="password" id="mdp"><br>
+    <p id="erreur_mdp" class="invisible">Le mot de passe doit être différent du nom</p>
+    <label>Sexe :</label><label for="homme">Homme</label><input type="radio" id="homme" name="sexe" value="homme" required>
+    <label for="Femme">Femme</label><input type="radio" id="Femme" name="sexe" value="Femme"><br>
+    <label for="dateNaissance">Date de naissance : </label><input type="date" id="dateNaissance" required><br><br>
+    <p>Veuillez m'envoyer :</p>
+    <label for="infolettre">Infolettre</label><input type="checkbox" id="infolettre"><br>
+    <label for="promo">Offres promotionnelles</label><input type="checkbox" id="promo">
+    <div class="bouton">
+        <input type="submit" value="Envoyer" onclick="return valider()">
+    </div>
 
+</form>
 </body>
 </html>
